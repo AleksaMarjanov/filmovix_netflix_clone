@@ -58,7 +58,7 @@ const Sidebar = ({ setMobileOpen }) => {
           </Box>
         ) : data.genres.map(({ name, id }) => (
           <Link key={id} className={classes.links} to="/">
-            <ListItem onClick={() => {}} button>
+            <ListItem onClick={() => dispatch(selectGenreOrCategory(id))} button>
               <ListItemIcon>
                 <img src={genreIcons[name.toLowerCase()]} className={classes.genreImage} height={30} />
               </ListItemIcon>
