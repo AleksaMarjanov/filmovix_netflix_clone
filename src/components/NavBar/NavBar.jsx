@@ -28,6 +28,7 @@ const Navbar = () => {
       if (token) {
         if (sessionIdFromLocalStorage) {
           const { data: userData } = await moviesApi.get(`/account?session_id=${sessionIdFromLocalStorage}`);
+
           dispatch(setUser(userData));
         } else {
           const sessionId = await createSessionId();
