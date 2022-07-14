@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { CircularProgress, Box, useMediaQuery, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 
 import { useGetMoviesQuery } from '../../services/TMDB';
-import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 import MovieList from '../MovieList/MovieList';
 import Pagination from '../Pagination/Pagination';
 
@@ -35,8 +34,6 @@ const Movies = () => {
   }
 
   if (error) return 'An error has occured';
-
-  console.log('Here is the data', data);
 
   return (
     <div>
