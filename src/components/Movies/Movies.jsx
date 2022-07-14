@@ -36,6 +36,8 @@ const Movies = () => {
 
   if (error) return 'An error has occured';
 
+  console.log('Here is the data', data);
+
   return (
     <div>
       <MovieList movies={data} numberOfMovies={numberOfMovies} />
