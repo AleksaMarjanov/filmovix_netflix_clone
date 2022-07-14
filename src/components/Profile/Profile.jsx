@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { Typography, Button, Box } from '@mui/material';
 import { useSelector } from 'react-redux';
+import { Typography, Button, Box } from '@mui/material';
 import { ExitToApp } from '@mui/icons-material';
 
-import { useGetListQuery } from '../../services/TMDB';
-import { userSelector } from '../../features/auth';
-import { RatedCards } from '..';
+import { useGetListQuery } from '../../services/TMDB.js';
+import { userSelector } from '../../features/auth.js';
+import RatedCards from '../RatedCards/RatedCards';
 
 const Profile = () => {
   const { user } = useSelector(userSelector);
@@ -18,7 +18,7 @@ const Profile = () => {
     refetchWatchlisted();
   }, []);
 
-  const logout = () => {
+  const handleLogout = () => {
     localStorage.clear();
 
     window.location.href = '/';
@@ -28,12 +28,12 @@ const Profile = () => {
     <Box>
       <Box display="flex" justifyContent="space-between">
         <Typography variant="h4" gutterBottom>My Profile</Typography>
-        <Button color="inherit" onClick={logout}>
+        <Button color="inherit" onClick={handleLogout}>
           Logout &nbsp; <ExitToApp />
         </Button>
       </Box>
       {!favoriteMovies?.results?.length && !watchlistMovies?.results?.length
-        ? <Typography variant="h5">Add favorites or watchlist some movies to see them here!</Typography>
+        ? <Typography variant="h5">Add favorites or watchlist some movies to see them here</Typography>
         : (
           <Box>
             <RatedCards title="Favorite Movies" data={favoriteMovies} />

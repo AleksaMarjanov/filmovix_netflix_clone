@@ -17,3 +17,4 @@ export default makeStyles((theme) => ({
     filter: theme.palette.mode === 'dark' && 'invert(1)',
   },
 }));
+
