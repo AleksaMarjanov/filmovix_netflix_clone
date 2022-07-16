@@ -15,8 +15,8 @@ const categories = [
   { label: 'Upcoming', value: 'upcoming' },
 ];
 
-const redLogo = 'https://fontmeme.com/temporary/838d38b59cd644e9162b23661c262fad.png';
-const blueLogo = 'https://fontmeme.com/temporary/ce1e38a867a3397fcf065271baa8aa1a.png';
+const redLogo = 'https://fontmeme.com/permalink/220716/3740fe2af615ea5896d296ca842de13d.png';
+const blueLogo = 'https://fontmeme.com/permalink/220716/213255c43bf8310ce87a317699f73ca4.png';
 
 const Sidebar = ({ setMobileOpen }) => {
   const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
@@ -24,6 +24,10 @@ const Sidebar = ({ setMobileOpen }) => {
   const classes = useStyles();
   const { data, isFetching } = useGetGenresQuery();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [genreIdOrCategoryName]);
 
   return (
     <>

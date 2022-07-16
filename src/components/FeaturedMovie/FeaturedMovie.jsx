@@ -10,12 +10,13 @@ const FeaturedMovie = ({ movie }) => {
   if (!movie) return null;
 
   return (
-    <Box component={Link} to={`/movie/${movie.id}`} className={classes.featuredMovieContainer}>
+    <Box component={Link} to={`/movie/${movie.id}`} className={classes.featuredCardContainer}>
       <Card className={classes.card} classes={{ root: classes.cardRoot }}>
         <CardMedia
           media="picture"
           alt={movie.title}
           image={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`}
+          title={movie.title}
           className={classes.cardMedia}
         />
         <Box padding="20px">
